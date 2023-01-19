@@ -9,7 +9,7 @@ namespace Ex31_hint
         public Hornet(string name, float hp, float power, bool animal) : base(name, hp, power, animal) { }
         public override void Attack(Character destination)
         {
-            if (animal)
+            if (destination.animal)
             {
                 Console.WriteLine($"{this.name}は{destination.name}に向けものすごい勢いで毒針を刺した");
                 Console.WriteLine($"{destination.name}はその場で膝を突いた！");
