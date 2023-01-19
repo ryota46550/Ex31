@@ -4,16 +4,14 @@ using System.Text;
 
 namespace Ex31_hint
 {
-    class Tank : Character
+    class Cow:Character
     {
-        public int bullet = 0;
-        public Tank(string name, float hp, float power ,bool animal) : base(name, hp, power,animal) { }
+        public Cow(string name, float hp, float power,bool animal) : base(name, hp, power,animal) { }
         public override void Attack(Character destination)
         {
-            if (bullet > 0)
+            if (hp > 5)
             {
-                bullet--;
-                Console.WriteLine($"{this.name}は{destination.name}に向け大砲を発射！");
+                Console.WriteLine($"{this.name}は{destination.name}に向け角で突撃！");
                 Console.WriteLine($"{destination.name}はうしろに吹っ飛んだ！");
                 Console.WriteLine($"{destination.name}は{this.power}のダメージ");
                 destination.hp -= this.power;
@@ -21,7 +19,7 @@ namespace Ex31_hint
             }
             else
             {
-                Console.WriteLine($"{base.name}は弾切れです！");
+                Console.WriteLine($"{base.name}はhp不足です！");
             }
         }
     }
